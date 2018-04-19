@@ -40,12 +40,12 @@ app.post("/", function(req, res){
         }
         if(number){
             res.redirect("/")
-        } else{
-            Student.create(newStudent, function(err, newlyCreated){
+        } else {
+            Student.create(newStudent, function(err, entry){
                 if(err){
                     console.log(err);
                 } else {
-                    console.log("new student");
+                    console.log(entry);
                     res.redirect("/");
                 }
             });
