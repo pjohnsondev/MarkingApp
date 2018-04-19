@@ -1,0 +1,30 @@
+<% include partials/header %>
+    <div class="container-fluid">
+    <h1>Student <%= student.number %></h1>
+        <form action="/student/<%= student._id %>?_method=PUT" method="POST" onsubmit="validation()">
+        <table>
+            <tr>
+                <th>Student number</th>
+                <th>Contents mark</th>
+                <th>Structure mark</th>
+                <th>Fluency mark</th>
+                <th>Participation mark</th>
+                <th>Minus mark</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><%= student.number %><a href="/student/<%= student._id %>/edit">edit</a></a></th>
+                <td><%= student.contents %></th>
+                <td><%= student.structure %></th>
+                <td><%= student.fluency %></th>
+                <td><%= student.participation %></th>
+                <td><%= student.minus %></th>
+                <td><%= student.total %></th>
+            </tr>
+        </table>
+        </form>
+        <h4><a href="/">Home</a></h4>
+        <h4><a href="/display">View all</a></h4>
+    </div>
+
+<% include partials/footer %>

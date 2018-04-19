@@ -1,0 +1,42 @@
+<% include partials/header %>
+    <div class="container-fluid">
+    <h1>New Student</h1>
+        <form action="/" method="POST" onsubmit="validation()">
+        <table>
+            <tr>
+                <th>Student number</th>
+                <th>Contents mark</th>
+                <th>Structure mark</th>
+                <th>Fluency mark</th>
+                <th>Participation mark</th>
+                <th>Minus mark</th>
+            </tr>
+            <tr>
+                <td><input type="number" min="1000" name="number" required autofocus></td>
+                <td><input type="number" max="25" name="contents" required></td>
+                <td><input type="number" max="25" name="structure" required></td>
+                <td><input type="number" max="25" name="fluency" required></td>
+                <td><input type="number" max="25" name="participation" required></td>
+                <td><input type="number" name="minus"></td>
+            </tr>
+        </table>
+            <button>Submit</button>
+        </form>
+        <h4><a href="/display">View all</a></h4>
+        <table>
+            <tr>
+            </tr>
+            <% students.forEach(function(student){ %>
+            <tr>
+                <td><%= student.number %></td>
+                <td><%= student.contents %></td>
+                <td><%= student.structure %></td>
+                <td><%= student.fluency %></td>
+                <td><%= student.participation %></td>
+                <td><%= student.minus %></td>
+                <td><%= student.total %></td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>
+<% include partials/footer %>

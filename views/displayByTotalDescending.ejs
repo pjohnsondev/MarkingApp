@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div class="container-fluid">
+<h1>Results</h1>
+<h4><a href="/">Home</a></h4>
+<table id="myTable">
+    <tr>
+        <th><a href="/display">number</a></th>
+        <th>contents</th>
+        <th>structure</th>
+        <th>fluency</th>
+        <th>participation</th>
+        <th>minus</th>
+        <th>total <a href="/displayByTotalAscending"><i class="fas fa-sort"></i></a></th>
+    </tr>
+    <% students.forEach(function(student){ %>
+    <tr>
+        <td><%= student.number %><a href="/student/<%= student._id %>/edit">edit</a></th>
+        <td><%= student.contents %></th>
+        <td><%= student.structure %></th>
+        <td><%= student.fluency %></th>
+        <td><%= student.participation %></th>
+        <td><%= student.minus %></th>
+        <td><%= student.total %></th>
+    </tr>
+    <% }); %>
+</table>    
+</div>
+<% include partials/footer %>

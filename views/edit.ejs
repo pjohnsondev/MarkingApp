@@ -1,0 +1,36 @@
+<% include partials/header %>
+    <div class="container-fluid">
+    <h1>Edit Student <%= student.number %></h1>
+    <form id="delete" action="/student/<%= student._id %>?_method=DELETE" method="POST">
+        <button id="delete">Delete</button>
+    </form> 
+    <div class="wrapper">
+        <form action="/student/<%= student._id %>?_method=PUT" method="POST" onsubmit="reTotal()">
+        <table>
+            <tr>
+                <th>Student number</th>
+                <th>Contents mark</th>
+                <th>Structure mark</th>
+                <th>Fluency mark</th>
+                <th>Participation mark</th>
+                <th>Minus mark</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="student[number]" value="<%= student.number %>"  readonly></td>
+                <td><input type="text" name="student[contents]" value="<%= student.contents %>" onchange="reTotal()" required></td>
+                <td><input type="text" name="student[structure]" value="<%= student.structure %>" onchange="reTotal()" required></td>
+                <td><input type="text" name="student[fluency]" value="<%= student.fluency %>" onchange="reTotal()" required></td>
+                <td><input type="text" name="student[participation]" value="<%= student.participation %>" onchange="reTotal()" required></td>
+                <td><input type="text" name="student[minus]" value="<%= student.minus %>" onchange="reTotal()" required></td>
+                <td><input type="text" name="student[total]" value="<%= student.total %>" readonly></td>
+            </tr>
+        </table>
+        <button>Submit</button>
+        </form>  
+        <h4><a href="/">Home</a></h4>
+        <h4><a href="/display">View all</a></h4>
+    </div>
+    </div>
+
+<% include partials/footer %>
