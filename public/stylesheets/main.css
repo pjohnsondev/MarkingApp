@@ -1,0 +1,35 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    padding-right:0;
+    width: 14%;
+}
+tr:nth-child(2n){
+    background: rgba(128,128,128, 0.1);
+}
+
+
+td a {
+    float: right;
+    margin-right: 5%;
+}
+button {
+    visibility: hidden;
+    margin-right:-50px;
+}
+
+form #delete{
+    float: right;
+    visibility: visible;
+    margin-right: 0%;
+    margin-bottom: 1%;
+}
+
